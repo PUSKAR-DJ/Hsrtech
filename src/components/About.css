@@ -13,9 +13,6 @@
   text-align: center;
   min-height: 50vh;
   padding: 4rem 8%;
-  /* Instead of the mockup's solid blue, using the site's dark theme 
-    to maintain consistency. 
-  */
   background-color: #0a0f1f; /* */
 }
 
@@ -44,11 +41,6 @@
   justify-content: center;
 }
 
-/* Re-using button styles from Home.css */
-/* Note: We should move .btn, .btn-primary, .btn-secondary 
-  to a global .css file like App.css or index.css 
-  to avoid repetition. For now, I am re-declaring them here.
-*/
 .btn {
   border: none;
   padding: 0.8rem 2rem;
@@ -61,7 +53,6 @@
 }
 
 .btn-primary {
-  /* Using the gradient from Navbar.css and Home.css */
   background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
   color: white;
   box-shadow: 0 4px 20px rgba(100, 181, 246, 0.3); /* */
@@ -89,9 +80,6 @@
   padding: 4rem 8%;
   max-width: 1200px;
   margin: 0 auto;
-  /* This part was white in the mockup, but I am keeping it on the dark
-    background to maintain the site's theme as requested.
-  */
 }
 
 .story-content {
@@ -105,7 +93,7 @@
   color: #fff;
   margin-bottom: 1.5rem;
   /* Gradient text to add visual interest */
-  background: linear-gradient(90deg, #64b5f6, #e91e63); /* */
+  background: linear-gradient(90deg, #64b5f6, #e91e63); 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

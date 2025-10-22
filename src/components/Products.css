@@ -1,6 +1,5 @@
 .products-page {
   width: 100%;
-  /* Using the established background color from your project */
   background-color: #0a0f1f; /* */
   color: rgba(255, 255, 255, 0.87); /* */
   /* padding-top: 70px;  */
@@ -22,7 +21,6 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  /* Using gradient text to match the project's theme */
   background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
   background-clip: text;
   -webkit-background-clip: text;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 
-// Using the existing background image as a placeholder for the hero globe
+// Using the background image as a placeholder for the hero globe
 import heroImage from '../assets/bc.jpg'; 
 
 const Home = () => {
@@ -21,7 +21,6 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image-container">
-          {/* Placeholder for the new globe image. Using old bc.jpg for now. */}
           <img src={heroImage} alt="AI Globe" className="hero-image" />
         </div>
       </section>
