@@ -1,15 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
+// We don't need a separate CSS file for this layout,
+// we can use the class from App.css.
 
-// This component will wrap all pages that need the Navbar
 const Layout = () => {
   return (
     <>
       <Navbar />
-      <main>
-        {/* Outlet renders the active child route (Home, About, etc.) */}
-        <Outlet /> 
+      {/* Apply the new class here. 
+        This will wrap Home, About, Services, etc. 
+      */}
+      <main className="main-content-layout">
+        <Outlet />
       </main>
     </>
   );
