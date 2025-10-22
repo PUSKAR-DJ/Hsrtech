@@ -1,0 +1,133 @@
+.services-page {
+  width: 100%;
+  /* Using the established background color from your project */
+  background-color: #0a0f1f; /* */
+  color: rgba(255, 255, 255, 0.87); /* */
+  padding-top: 70px; /* Account for fixed navbar */
+}
+
+/* Services Hero Section */
+.services-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 40vh;
+  padding: 3rem 8%;
+  background: #0a0f1f; /* */
+}
+
+.services-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  /* Using gradient text to match the project's theme */
+  background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+/* Services Grid */
+.services-grid-section {
+  padding: 2rem 8%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  /* Creates a responsive grid that fits as many 300px cards as it can */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Re-using the card style from Home.css */
+.service-card {
+  background: #101830; 
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-height: 250px; /* Give cards a uniform height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #64b5f6; /* */
+}
+
+.service-icon {
+  font-size: 1rem;
+  color: #64b5f6; /* */
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  /* Placeholder for icon */
+  width: 50px;
+  height: 50px;
+  background: #1a203c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #64b5f6;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Services CTA */
+.services-cta {
+  text-align: center;
+  padding: 4rem 8% 6rem 8%;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Button styles (re-declared for this component) */
+.btn {
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
+  color: white;
+  box-shadow: 0 4px 20px rgba(100, 181, 246, 0.3); /* */
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.5); /* */
+}

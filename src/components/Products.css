@@ -1,0 +1,175 @@
+.products-page {
+  width: 100%;
+  /* Using the established background color from your project */
+  background-color: #0a0f1f; /* */
+  color: rgba(255, 255, 255, 0.87); /* */
+  padding-top: 70px; /* Account for fixed navbar */
+}
+
+/* Products Hero Section */
+.products-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+  padding: 3rem 8%;
+  background-color: #0a0f1f; /* */
+}
+
+.products-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  /* Using gradient text to match the project's theme */
+  background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.products-subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.products-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+/* Products Grid */
+.products-grid-section {
+  padding: 2rem 8% 6rem 8%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #101830; 
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: #64b5f6; /* */
+}
+
+.product-icon {
+  font-size: 1rem;
+  color: #64b5f6; /* */
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  /* Placeholder for icon */
+  width: 50px;
+  height: 50px;
+  background: #1a203c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #64b5f6;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.product-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Coming Soon Card */
+.product-card.coming-soon {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+.product-card.coming-soon:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #64b5f6;
+  color: #0a0f1f;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Footer CTA Bar */
+.products-cta-bar {
+  background: #101830;
+  padding: 2.5rem 8%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cta-bar-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Button styles (re-declared for this component) */
+.btn {
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63); /* */
+  color: white;
+  box-shadow: 0 4px 20px rgba(100, 181, 246, 0.3); /* */
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.5); /* */
+}
