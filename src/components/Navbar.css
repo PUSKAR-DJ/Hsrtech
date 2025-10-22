@@ -202,3 +202,7 @@
     gap: 0.5rem;
   }
 }
+
+.login-button-link {
+  text-decoration: none;
+}
