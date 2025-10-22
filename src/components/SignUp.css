@@ -1,0 +1,19 @@
+/* We just need a few tweaks, as Login.css does most of the work */
+
+/* On desktop, we want the form on the left and info on the right */
+@media (min-width: 769px) {
+  .signup-container {
+    /* This reverses the grid columns from the login page */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .signup-container .login-form-container {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .signup-container .login-info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

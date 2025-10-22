@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useAuth(); 
+  const navigate = useNavigate(); 
+
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevents the page from reloading
+    
+    console.log('Logging in with:', email, password);
+
+    login(); 
+    navigate('/');
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -23,11 +38,36 @@ const Login = () => {
         {/* Right Form Panel */}
         <div className="login-form-container">
           <h2 className="form-title">Login to Your Account</h2>
-          <form className="login-form">
+
+          {/* Change <form> to use our submit handler */}
+          <form className="login-form" onSubmit={handleLogin}>
+
+            {/* Email Field */}
             <div className="form-group">
               <label htmlFor="email">Email / Username</label>
-              <input type="text" id="email" name="email" />
+              <input
+                type="text"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
+
+            {/* NEW: Password Field */}
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
             <div className="form-options">
               <label className="remember-me">
                 <input type="checkbox" />
@@ -50,7 +90,7 @@ const Login = () => {
               </button>
             </div>
             <p className="signup-link">
-              Don't have an account? <a href="#">Sign Up</a>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
           </form>
         </div>
