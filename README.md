@@ -42,7 +42,7 @@ This repository contains the frontend code for the HSR Technology corporate webs
 1.  Clone the repository:
 
     ```bash
-    git clone https://your-repository-url/Hsrtech.git
+    git clone https://PUSKAR-DJ/Hsrtech.git
     cd Hsrtech
     ```
 
