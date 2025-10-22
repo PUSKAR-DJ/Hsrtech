@@ -1,6 +1,7 @@
 <p align="center">
     <img src="src/assets/logo.png" alt="HSR Technology Logo" width="200" />
 </p>
+
 # HSR Technology - Corporate Website Frontend
 
 This repository contains the frontend code for the HSR Technology corporate website. It is a modern, responsive, multi-page web application built with React and Vite, designed to showcase the company's services, products, and information.
