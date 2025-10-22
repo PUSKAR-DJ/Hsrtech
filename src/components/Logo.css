@@ -1,0 +1,22 @@
+.logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-hsr {
+  background: linear-gradient(90deg, #64b5f6, #9c27b0, #e91e63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.logo-tech {
+  color: white;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
