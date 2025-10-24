@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 // Using the background image as a placeholder for the hero globe
 import heroImage from '../assets/bc.jpg'; 
@@ -16,7 +17,7 @@ const Home = () => {
             development, and consulting services empower businesses to thrive.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Explore Our Solutions</button>
+            <Link to="/services" className="btn btn-primary">Explore Our Solutions</Link>
             <button className="btn btn-secondary">Request A Consultation</button>
           </div>
         </div>
@@ -124,7 +125,7 @@ const Home = () => {
       <section className="cta-section">
         <h2>Ready to Transform Business?</h2>
         <p>Get in touch with our experts for a free consultation.</p>
-        <button className="btn btn-light">Explore Solutions</button>
+        <Link to="/services" className="btn btn-light">Explore Solutions</Link>
       </section>
 
       {/* Footer Section */}
