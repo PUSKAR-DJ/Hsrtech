@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import { API_BASE } from '../config';
 
 const Contact = () => {
   // Add state for form fields and feedback
@@ -20,7 +21,7 @@ const Contact = () => {
     const token = localStorage.getItem('authToken'); // Get the stored token
 
     try {
-      const response = await fetch('http://localhost:4500/api/contact', { // Your backend URL
+      const response = await fetch(`${API_BASE}/api/contact`, { // Your backend URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

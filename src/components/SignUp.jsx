@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './SignUp.css';
 import { useAuth } from '../context/AuthContext'; // Import useAuth
+import { API_BASE } from '../config';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +23,7 @@ const SignUp = () => {
 
     try {
       // Send data to backend endpoint (defined in user.router.js)
-      const response = await fetch('http://localhost:4500/api/user/register', { // Your backend URL
+      const response = await fetch(`${API_BASE}/api/user/register`, { // Your backend URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE } from '../config';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const Login = () => {
 
     try {
       // Send data to backend endpoint (defined in user.router.js)
-      const response = await fetch('http://localhost:4500/api/user/login', { // Your backend URL
+      const response = await fetch(`${API_BASE}/api/user/login`, { // Your backend URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
