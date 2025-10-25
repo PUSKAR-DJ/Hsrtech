@@ -59,7 +59,9 @@ In the project directory, you can run the following commands:
 ### `npm run dev`
 
 Starts the development server.
-Open [http://localhost:5173](https://www.google.com/search?q=http://localhost:5173) (or the port specified in your console) to view it in your browser. The page will hot-reload as you make edits.
+Open http://localhost:5173 (or the port shown in your console) to view it in your browser while running `npm run dev`. The page will hot-reload as you make edits.
+
+During development the frontend talks to a backend API whose base URL is configurable via the Vite environment variable `VITE_API_URL` (see the Environment variables section below).
 
 ### `npm run build`
 
@@ -73,6 +75,33 @@ Lints the project files using ESLint to find and fix problems in your JavaScript
 ### `npm run preview`
 
 Serves the production build from the `dist` folder locally. This is a way to test the final app *after* running `npm run build`.
+
+## Environment variables
+
+This project uses Vite environment variables for build-time configuration. All Vite variables must be prefixed with `VITE_`.
+
+- The frontend reads the API base URL from `import.meta.env.VITE_API_URL` (see `src/config.js`).
+- A sample file `.env.example` is included in the repository. Copy it to `.env` and edit the value for local development:
+
+```bash
+cp .env.example .env
+# then edit .env and set VITE_API_URL as needed
+```
+
+Example values:
+
+```text
+# development
+VITE_API_URL=http://localhost:4500
+
+# production
+VITE_API_URL=https://api.example.com
+```
+
+Notes:
+
+- `.env` is listed in `.gitignore` so it won't be committed. Keep secrets out of the repository.
+- On Vercel, set an Environment Variable named `VITE_API_URL` in Project → Settings → Environment Variables to your production API URL. Vercel will provide that value at build time.
 
 ## Project Structure
 
