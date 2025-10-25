@@ -202,3 +202,20 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(100, 181, 246, 0.5); /* */
 }
+
+.contact-status {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.contact-status.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+.contact-status.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}

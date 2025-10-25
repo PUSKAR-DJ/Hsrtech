@@ -1,20 +1,46 @@
-import React, { useState } from 'react';import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useAuth(); 
-  const navigate = useNavigate(); 
+  const [error, setError] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault(); // Prevents the page from reloading
-    
-    console.log('Logging in with:', email, password);
+    setError('');
 
-    login(); 
-    navigate('/');
+    try {
+      // Send data to backend endpoint (defined in user.router.js)
+      const response = await fetch('http://localhost:4500/api/user/login', { // Your backend URL
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // If response is not 2xx, throw an error
+        throw new Error(data.message || 'Login failed');
+      }
+
+      localStorage.setItem('authToken', data.token);
+
+      // Update auth context and navigate
+      login(data.token); // Update isAuthenticated state
+      navigate('/'); // Redirect to homepage
+
+    } catch (err) {
+      console.error('Login error:', err);
+      setError(err.message); // Show error to the user
+    }
   };
 
   return (
@@ -39,7 +65,8 @@ const Login = () => {
         <div className="login-form-container">
           <h2 className="form-title">Login to Your Account</h2>
 
-          {/* Change <form> to use our submit handler */}
+          {/* Display login errors */}
+          {error && <p className="login-error">{error}</p>}
           <form className="login-form" onSubmit={handleLogin}>
 
             {/* Email Field */}

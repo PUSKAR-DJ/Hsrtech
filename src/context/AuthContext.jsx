@@ -1,22 +1,25 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    const token = localStorage.getItem('authToken');
+    return !!token; // true if token exists
+  });
 
-  // We'll call this from our Login page
-  const login = () => {
-    // In a real app, this would happen after a successful API call
-    console.log("User logged in!");
+  const login = (token) => {
+    localStorage.setItem('authToken', token); // Store the token
+    console.log("User logged in! Token stored.");
     setIsAuthenticated(true);
   };
 
   // We'll call this from our Navbar
   const logout = () => {
-    console.log("User logged out!");
+    localStorage.removeItem('authToken');
+    console.log("User logged out! Token removed.");
     setIsAuthenticated(false);
   };
 
